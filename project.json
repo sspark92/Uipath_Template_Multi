@@ -1,5 +1,5 @@
 {
-  "name": "basic",
+  "name": "Template_Single",
   "description": "Robotic Enterprise Framework",
   "main": "Main.xaml",
   "dependencies": {
