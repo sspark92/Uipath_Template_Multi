@@ -88,7 +88,6 @@
       <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
       <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
       <AssemblyReference>UiPath.GSuite.Activities.Design</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
   <sap:WorkflowViewStateService.ViewState>
@@ -96,7 +95,7 @@
       <x:Boolean x:Key="ShouldExpandAll">True</x:Boolean>
     </scg:Dictionary>
   </sap:WorkflowViewStateService.ViewState>
-  <StateMachine InitialState="{x:Reference __ReferenceID3}" sap2010:Annotation.AnnotationText="[Process title]&#xA;[Process description]&#xA;[Additional information (e.g., author, contact information and applications involved and required external setup)]&#xA;&#xA;" DisplayName="General Business Process" sap:VirtualizedContainerService.HintSize="687,828" sap2010:WorkflowViewState.IdRef="StateMachine_1">
+  <StateMachine InitialState="{x:Reference __ReferenceID3}" sap2010:Annotation.AnnotationText="[Process title]&#xA;[Process description]1&#xA;[Additional information (e.g., author, contact information and applications involved and required external setup)]&#xA;&#xA;" DisplayName="General Business Process" sap:VirtualizedContainerService.HintSize="687,828" sap2010:WorkflowViewState.IdRef="StateMachine_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -314,36 +313,16 @@
                   <TryCatch.Finally>
                     <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke SetTransactionStatus " sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_30" UnSafe="False" WorkflowFileName="Framework\SetTransactionStatus.xaml">
                       <ui:InvokeWorkflowFile.Arguments>
-                        <InArgument x:TypeArguments="ui:BusinessRuleException" x:Key="in_BusinessException">
-                          <mva:VisualBasicValue x:TypeArguments="ui:BusinessRuleException" ExpressionText="BusinessException" />
-                        </InArgument>
-                        <InArgument x:TypeArguments="x:String" x:Key="in_TransactionField1">
-                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="TransactionField1" />
-                        </InArgument>
-                        <InArgument x:TypeArguments="x:String" x:Key="in_TransactionField2">
-                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="TransactionField2" />
-                        </InArgument>
-                        <InArgument x:TypeArguments="x:String" x:Key="in_TransactionID">
-                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="TransactionID" />
-                        </InArgument>
-                        <InArgument x:TypeArguments="s:Exception" x:Key="in_SystemException">
-                          <mva:VisualBasicValue x:TypeArguments="s:Exception" ExpressionText="SystemException" />
-                        </InArgument>
-                        <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">
-                          <mva:VisualBasicValue x:TypeArguments="scg:Dictionary(x:String, x:Object)" ExpressionText="Config" />
-                        </InArgument>
-                        <InArgument x:TypeArguments="sd:DataRow" x:Key="in_TransactionItem">
-                          <mva:VisualBasicValue x:TypeArguments="sd:DataRow" ExpressionText="TransactionItem" />
-                        </InArgument>
-                        <InOutArgument x:TypeArguments="x:Int32" x:Key="io_RetryNumber">
-                          <mva:VisualBasicReference x:TypeArguments="x:Int32" ExpressionText="RetryNumber" />
-                        </InOutArgument>
-                        <InOutArgument x:TypeArguments="x:Int32" x:Key="io_TransactionNumber">
-                          <mva:VisualBasicReference x:TypeArguments="x:Int32" ExpressionText="TransactionNumber" />
-                        </InOutArgument>
-                        <InOutArgument x:TypeArguments="x:Int32" x:Key="io_ConsecutiveSystemExceptions">
-                          <mva:VisualBasicReference x:TypeArguments="x:Int32" ExpressionText="ConsecutiveSystemExceptions" />
-                        </InOutArgument>
+                        <InArgument x:TypeArguments="ui:BusinessRuleException" x:Key="in_BusinessException">[BusinessException]</InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="in_TransactionField1">[TransactionField1]</InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="in_TransactionField2">[TransactionField2]</InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="in_TransactionID">[TransactionID]</InArgument>
+                        <InArgument x:TypeArguments="s:Exception" x:Key="in_SystemException">[SystemException]</InArgument>
+                        <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">[Config]</InArgument>
+                        <InArgument x:TypeArguments="sd:DataRow" x:Key="in_TransactionItem">[TransactionItem]</InArgument>
+                        <InOutArgument x:TypeArguments="x:Int32" x:Key="io_RetryNumber">[RetryNumber]</InOutArgument>
+                        <InOutArgument x:TypeArguments="x:Int32" x:Key="io_TransactionNumber">[TransactionNumber]</InOutArgument>
+                        <InOutArgument x:TypeArguments="x:Int32" x:Key="io_ConsecutiveSystemExceptions">[ConsecutiveSystemExceptions]</InOutArgument>
                       </ui:InvokeWorkflowFile.Arguments>
                     </ui:InvokeWorkflowFile>
                   </TryCatch.Finally>
@@ -522,7 +501,7 @@
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
                           <Transition.To>
-                            <State x:Name="__ReferenceID1" sap2010:Annotation.AnnotationText="End process and close all applications used." DisplayName="End Process" sap:VirtualizedContainerService.HintSize="604,1415" sap2010:WorkflowViewState.IdRef="State_1" IsFinal="True">
+                            <State x:Name="__ReferenceID1" sap2010:Annotation.AnnotationText="End process and close all applications used." DisplayName="End Process" sap:VirtualizedContainerService.HintSize="144,119" sap2010:WorkflowViewState.IdRef="State_1" IsFinal="True">
                               <State.Entry>
                                 <TryCatch DisplayName="Try to close all aplications" sap:VirtualizedContainerService.HintSize="558,1271" sap2010:WorkflowViewState.IdRef="TryCatch_4">
                                   <sap:WorkflowViewStateService.ViewState>
